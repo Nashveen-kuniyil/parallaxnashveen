@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nivin</title>
+    <link rel="stylesheet" href="./nivin.css">
+    <link rel="icon" type="image/png" href="data:image/jpeg;base64,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">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <section id="home">
+        <nav>
+            <ul type="none">
+              
+                <li><a href="#home"><h2><i class="fa-solid fa-house fa-sm"></i>Home</h2></a></li>
+                <li><a href="#about"><h2><i class="fa-solid fa-address-card"></i>About</h2></a></li>
+                <li><a href="#career"><h2>Career</h2></a></li>
+                <li><a href="#movies"><h2>Movies</h2></a></li>
+               
+        
+        
+            
+        
+            </ul>
+        </nav>
+        </section>
+
+        <section id="banner">
+            <video autoplay loop muted>
+                <source src="./nivin.mp4">
+            </video>
+        </section>
+
+        <section id="nivin">
+        
+
+
+        </section>
+
+        
+        
+<section id="about">
+    <h2 id="abo"><i class="fa-solid fa-address-card"> <span>About</span></i></h2>
+    <h2 id="nv">Nivin Pauly</h2>
+
+<div class="nivin2">
+    <img id="nvn2" src="./nivin2.jpg" alt="">
+    <p>Nivin Pauly (born October 11, 1984) is an Indian actor and producer who works predominantly in Malayalam films. He is the recipient of several awards, including two Kerala State Film Awards, three Filmfare Awards South, two Kerala Film Critics Association Awards, and six SIIMA Awards. He auditioned for and was cast in one of the main roles in Vineeth Sreenivasan's directorial debut, Malarvaadi Arts Club, in 2009 and got his breakthrough in the romantic film Thattathin Marayathu (2012). <br><br>
+        He came to be known for playing the boy next door archetype following roles in the bilingual black-comedy thriller Neram (2013), the sports-drama 1983 (2014), the romantic-comedy Ohm Shanthi Oshaana (2014), the romantic-drama Bangalore Days (2014), the comedy road-thriller Oru Vadakkan Selfie (2015), and the coming-of-age romantic drama Premam (2015), is among the top 10 highest-grossing Malayalam films. He then went on to star in the police drama Action Hero Biju (2016), the family drama Jacobinte Swargarajyam (2016), the political satire Sakhavu (2017), family comedy Njandukalude Nattil Oridavela (2017) and the epic film Kayamkulam Kochunni (2018) which emerged as one of the highest-grossing Malayalam film. <br><br>
+        Nivin made his debut as a producer with Action Hero Biju under his production company Pauly Jr. Pictures and has produced the films Njandukalude Nattil Oridavela[3] and Kanakam Kaamini Kalaham (2021), the first Malayalam movie to premiere on Disney+ Hotstar. <br><br>
+        He won the Filmfare Award for Best Male Debut for Neram (2013).[4] In 2015, he won the Kerala State Film Award for Best Actor for his performances in Bangalore Days and 1983.[5][6] He won the Filmfare Award for Best Actor – Malayalam for Action Hero Biju (2016)[7] In 2020, he won the Kerala State Film Award for Best Actor -Special Mention for Moothon. <br><br>
+        Since 2022, he has starred in the films Mahaveeryar, Padavettu, Saturday Night, Thuramukham and Ramachandra Boss & Co.</p>
+
+
+
+
+
+</div><br><br>
+</section>
+
+
+<br><br>
+
+<section id="nivin">
+        
+
+
+</section>
+
+
+<section id="career">
+    <h2 id="abo">Career</h2>
+
+    <h4><br><br><br>Debut and breakthrough (2010–2012)</h4>
+    <div class="debut">
+        <p><br> Nivin auditioned for Malarvaadi Arts Club and was cast by Vineeth Sreenivasan in the role of Prakashan, which marked his debut.[10][13] Following this, he acted in the films The Metro[14] and Sevenes,[15] and did cameos in Traffic and Spanish Masala. He appeared in the music video Nenjodu Cherthu from the album Yuvvh, which The Hindu called "hugely popular" ,[13] and was a viral hit on YouTube. <br><br>
+            The 2012 film Thattathin Marayathu was his acting vehicle,[12][17] which became one of the biggest hits of the year.[18][19] He played the role of Vinod, a Hindu boy madly in love with Ayesha, a Muslim girl.[20] This was the second directorial venture of Vineeth Sreenivasan and is a milestone in Nivin's film career[17] turning him into "the current youth sensation"[17] and a much sought after actor.[12] This also secured his position as one of the finest actors in the Malayalam film industry.[21] He received offers from directors including Sathyan Anthikad, Rajesh Pillai, Aashiq Abu and Shyamaprasad.</p>
+            <div class="debu">
+                <img id="de" src="./nivin4.avif" alt="">
+            </div></div>
+    </div><br><br><br><br>
+    <section id="nivin">
+        
+
+
+    </section>
+    <h4 id="rise">Rise to prominence (2013–2015)</h4>
+    <div class="debut">
+
+    <img id="n1983" src="./1983.jpg" alt="">
+
+    
+
+
+    <p>Nivin made his debut in Tamil with the bilingual film Neram.[18] His other Malayalam films in 2013 include 5 Sundarikal and Sunil Ibrahim's Arikil Oraal. The film was director Alphonse Puthren's directorial debut and was noted for its non-linear screenplay. He also acted in Shyamaprasad's English: An Autumn in London where he portrayed the character of a London-born dapper playboy.[23] The latter was a psychological thriller in which he played the role of Ichcha, a waiter at a café. In 5 Sundarikal, he acted in the segment "Isha" directed by Sameer Thahir . <br><br>In 2014, he played the role of Rameshan in Abrid Shine's directorial debut 1983, a coming-of-age sports film.[24] His portrayal of Rameshan from his school life, well into adulthood earned him the Best Actor Award at the 2014 Kerala State Film Awards.[25] This film also fetched him multiple other awards including the Best Actor (Malayalam) at the Filmfare Awards South[26] and South Indian International Movie Awards,[27] and Most Popular Actor at the Vanitha Film Awards.[citation needed] This was followed by debutant Jude Anthany Joseph's romantic comedy Ohm Shanthi Oshaana, in which he portrayed the role of Giri and was released a week after 1983. "Sify" stated that the director Jude Anthany Joseph "creates an engaging enough drama in Ohm Shanthi Oshaana, that you're happy to emotionally invest in [it]."[28] His next release Bangalore Days was the coming-of-age romantic comedy drama directed by Anjali Menon. Nivin essayed the role of Krishnan "Kuttan" P P, a software engineer who is judgemental about modern life without really thinking about his own hypocrisies.[29] This role was also taken into account by the jury for the Best Actor award at the 2014 Kerala State Film Awards. The film was released in 205 theaters across India, making it one of the biggest releases for a Malayalam film at the time.[citation needed] In the same year, he played an extended cameo in the Lal Jose film Vikramadithyan, as an assistant district magistrate. <br><br>
+        In 2015, Nivin appeared in Mili, Oru Vadakkan Selfie and Ivide. He plays the role of a soft-skills trainer, Naveen in Mili,[30] directed by Rajesh Pillai. He followed this up with the "road-comedy film" Oru Vadakkan Selfie, directed by G. Prajith and scripted by Vineeth Sreenivasan.
+
+        He then acted in Premam, where he played the role of George David. It grossed over 600 million, and became one of the highest grossing Malayalam movies, catapulting him into the '50-crore club'.[31][32][33] The film collected ₹2 crore from Tamil Nadu box office in its 300 days theatrical run making it the highest grossing Malayalam film in Tamil Nadu at the time.[citation needed] Nivin's portrayal of George was featured in the Film Companion's 100 Greatest Performances of the Decade.[34] Praising his performance, the Film Companion wrote: "His performance had charm, mischief, and most impressively, vulnerability." </p>
+
+    </div><br><br><br><br>
+    <section id="nivin">
+        
+
+
+    </section>
+    <h4>Continued success and critical acclaim (2016–2021)</h4>
+    <div class="debut">
+        <p>Nivin turned producer with Action Hero Biju in 2016 under his banner Pauly Jr. Pictures.[35] The film, a police procedural drama, was directed by Abrid Shine. As sub-inspector Biju Poulose, the film and the role portrays an honest look at the life of a police official. The film also has the highest opening gross for a Malayalam film in Tamil Nadu.[citation needed] The movie was well received by the police fraternity in Kerala.[36][37] He also starred in the family-drama Jacobinte Swargarajyam directed by Vineeth Srinivasan. Based on a true story, he played the role of Jerry, the son of Jacob Zacharia who struggles to clear his father's debts. <br><br>
+            His next film was a political drama Sakhavu in which he played dual roles.[38] Directed by Sidhartha Siva, this was the first dual role in his career, where he portrayed a student political leader and a senior social activist and comrade who fights for his left-wing ideals.
+
+            Nivin appeared in his first straight Tamil feature film through Gautham Ramachandran's crime drama Richie (2017), where he portrayed a small town thug.[39] He also starred in the dramedy Njandukalude Nattil Oridavela. This film was his second outing as a producer.[40] The film which was received well at the box office[41] was a heart-warming story which portrayed that cancer is never the end of the road for everyone involved.[42] <br><br>
+            In 2018, the big-budget movie Kayamkulam Kochunni, directed by Rosshan Andrrews made a significant impact at the Kerala box office, and across all territories that it was released as well. This film put Nivin in the 100 crore club.[43] He came together with Shyamaprased for a third time for the romantic-comedy Hey Jude. Nivin plays the role of a mathematical genius, yet socially awkward Jude who like his namesake Beatles song finds himself in spite of his perceived shortcomings.[44]
+
+            2019 started off with his role of Dr Mikhael John in Haneef Adeni's action-thriller Mikhael. This was followed by Love Action Drama, a romantic comedy which also saw commercial success at the box office.[45] Nivin next appeared in Geetu Mohandas' film Moothon which was screened at several international film festivals worldwide including Toronto International Film Festival,[46] New York Indian Film Festival,[47] FFAST (Paris),[48] Indian Film Festival of Melbourne[49] and Mumbai Film Festival.[50] He won the award for the best actor at the New York Indian Film Festival for his role in Moothon.[51] Nivin effortlessly portrayed the dark and demoralising world of Moothon as Akbar[52] which fetched him the Kerala State Film Awards – Special Mention in 2019.[53] The film was the screened as the opening film at the Mumbai Film Festival Mumbai Academy of the Moving Image and as the grand finale at the Indian Film Festival of Melbourne.[54] Nivin's role as Akbar in this film was also featured in Film Companion's 100 Greatest Performances of the Decade.</p>
+
+            <div class="debu">
+               <br><br> <img id="vik" src="./vikram.jpg" alt="">
+            </div></div>
+
+            <br><br><br>
+            <section id="nivin">
+        
+
+
+            </section>
+            <h4 id="pre">2022-Present</h4>
+            <div class="debut">
+<img id="ni2022" src="./n2022.jpg" alt="">
+<img id="ni2024" src="./n2024.avif" alt="">
+<img id="ni2024" src="./padavettu.jpg" alt="">
+</div>
+
+<p>The fantasy film Mahaveeryar was his first release of the year directed by Abrid Shine and was released on 21 July 2022, to critical acclaim .However the film failed at the box office.[56] The climax of the film was later changed and it was better received and understood by the audience. The teaser of Mahaveeryar garnered 6 million views within 24 hours of its launch making it the then most viewed teaser in Malayalam cinema.[57] The next film,action thriller Padavettu, an action thriller directed by debutant Liju Krishna had its theatrical release on 21 October 2022, to critical acclaim from the critics.[58][59] The trailer of Padavettu was launched to a full house at the inaugural match of the Indian Super League 2022 at the Jawaharlal Nehru International Stadium, Kochi; making it the first film to have the trailer launch at the ISL.[60] This was followed by the comedy drama Saturday Night, directed by Rosshan Andrrews which explores the relationship between four friends was released on 4 November 2022.[61][62] In 2023, Nivin appeared on screen as Mattanchery Moidu in Rajeev Ravi's film Thuramukham. The movie was critically acclaimed and Nivin was praised for his sublime performance.[citation needed] He then starred in the heist action comedy Ramachandra Boss & Co, directed by Haneef Adeni. The film received mixed reviews from the critics. <br><br>
+    In 2024,his films Varshangalkku Shesham and Malayalee from India directed by Vineeth Sreenivasan and Dijo Jose Antony, respectively were released. <br><br>
+    His next release is a Tamil film, Yezhu Kadal Yezhu Malai, directed by Ram.[65] His upcoming projects are Action Hero Biju 2, Gangster of Mundanmala and Shekara Varma Rajavu.[66][67] He has also announced a new project titled Dear Students, which will be produced under his home banner.</p>
+
+</section>
+
+<section id="nivin">
+        
+
+
+</section>
+
+<section id="movies">
+<br><br><br>
+<h2 id="ies"><i class="fa-solid fa-film"></i> Movies</h2>
+<br><br><br>
+<div class="row">
+
+   <div class="col" id="mal">
+    <img id="mov" src="https://upload.wikimedia.org/wikipedia/en/e/e7/Malarvaadi_Arts_Club.jpg" alt="">
+<h3>Malarvadi Arts & Science</h3> 
+<h5>2010 ‧ Comedy/Drama ‧ 2h 2m</h5>
+<div class="hov">
+    <p>Five friends take the responsibility of reviving their favourite hang-out as they are unhappy with its functioning. However, they end up facing various problems while trying to keep the club alive.</p>
+</div>
+<button><h4>Watch Now</h4></button>
+</div>
+
+
+   <div class="col" id="met">
+    <img id="mov" src="https://m.media-amazon.com/images/M/MV5BNDA0NzVlMzQtZTVhNy00YWQzLTllODEtZWU4NTFkZDQ5ZThiXkEyXkFqcGdeQXVyODE0NjUxNzY@._V1_.jpg" alt="">
+<h3>The Metro</h3>  
+<h5>2011 ‧ Thriller/Action ‧ 2h 12m</h5>
+<div class="hov">
+    <p>An anthology of three stories. The first story involves a murder investigation, the second story is about a group of goons following a girl, the third involves five friends delivering a package.</p>
+</div><br>
+<button><h4>Watch Now</h4></button>
+
+</div>
+
+   <div class="col" id="sev">
+    <img id="mov" src="https://sund-images.sunnxt.com/13918/640x360_Sevenes_13918_56c487f3-7f02-4338-b05c-45759dcb65bf.jpg" alt="">
+<h3>Sevens</h3>
+<h5> 2011 ‧ Sport/Action ‧ 2h 30m</h5>  
+<div class="hov">
+    <p>Shyam, Ashokan, Sharath, Shaukath, Arun, Vijeesh and Linto are seven young men who are passionate about football. But when they get involved in a crime, they try to prove their innocence.</p>
+
+</div>
+<button><h4>Watch Now</h4></button>
+</div>
+
+   <div class="col" id="that">
+    <img id="mov" src="https://m.media-amazon.com/images/S/pv-target-images/a4112f7698cff96794ab621cc578498c6893821002def3bbc821f4013bc6c750.jpg" alt="">
+<h3>Thattathin Marayath</h3>  
+<h5> 2012 ‧ Romance/Musical ‧ 2h 7m</h5>
+<div class="hov">
+    <p>
+        In a romance between a Hindu boy and a Muslim girl, crisis are predictable. But the sense of banality is whittled down by heart-warming gags that are shared by the protagonist's buddies.
+    </p></div><br>
+    <button><h4>Watch Now</h4></button>
+
+
+</div>
+</div>
+
+<div class="row">
+<div class="col" id="bho">
+    <img id="mov" src="https://m.media-amazon.com/images/M/MV5BNTk5YjEzOTctZjEwYS00NzM0LWI3YzMtNTBmOTQ3ZWZmYjgxXkEyXkFqcGdeQXVyODE0NjUxNzY@._V1_.jpg" alt="">
+ <h3>Bhoopadalathil Illatha Oridam</h3>  
+ <h5>2012 ‧ Comedy/Drama ‧ 1h 52m</h5>
+ <div class="hov">
+    <p>The schoolmaster of a remote village is well-liked by his students, even if his wife thinks he's lazy around the house. When he becomes the sole witness to a theft, the police pressure him to identify the culprit.</p>
+ </div>
+ <button><h4>Watch Now</h4></button>
+
+</div> 
+
+   <div class="col" id="pud">
+    <img id="mov" src="https://m.media-amazon.com/images/M/MV5BYzcxNTY0YmEtZjc4OS00NTFiLWIwMjAtODNkY2FjNTEyOTI5XkEyXkFqcGdeQXVyNjQ5NTA2ODE@._V1_.jpg" alt="">
+<h3>Pudhiya Theerangal</h3>  
+<h5>2012 ‧ Comedy/Drama ‧ 2h 8m</h5> 
+<div class="hov">
+    <p>Thamara, an orphan, rescues an old man from committing suicide and fosters him. Soon, she bonds with the old man and unravels the mystery behind his suicidal attempt.</p>
+</div><br>
+<button><h4>Watch Now</h4></button>
+
+</div>
+
+   <div class="col" id="cha">
+    <img id="mov" src="https://sund-images.sunnxt.com/8160/1600x1200_Chapters_8160_7ceae9a5-ccca-4828-86de-c7c0aa270018.jpg" alt="">
+<h3>Chapters</h3> 
+<h5> 2012 ‧ Drama/Drama ‧ 1h 51m</h5> 
+<div class="hov">
+    <p> <br>Different people who are in serious crisis see a ray of hope when their lives get interlinked in an unexpected turn of events.</p>
+</div><br>
+<button><h4>Watch Now</h4></button>
+
+</div>
+
+   <div class="col" id="ner">
+    <img id="mov" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQI84c0n-Fz2ObAy3FGfkpv1hn8et2kYg90NHuryC-yyHXlkkSV8esG6ULZOkDNFczHa4AU" alt="">
+<h3>Neram</h3> 
+<h5>2013 ‧ Thriller/Comedy ‧ 1h 57m</h5> 
+<div class="hov">
+    <p>An unemployed engineer struggles to pay back the money he took from a loan shark. His life becomes complicated when he elopes with his girlfriend as her father opposes their relationship.</p>
+</div><br>
+<button><h4>Watch Now</h4></button>
+
+</div>
+</div>
+
+<div class="row">
+    <div class="col" id="sun">
+        <img id="mov" src="https://im.rediff.com/movies/2013/jun/24-5-sundarikal.jpg" alt="">
+   <h3>5 Sundarikal</h3>
+   <h5>2013 ‧ Romance/World cinema ‧ 1h 57m
+</h5>
+<div class="hov">
+    <p><br> A film comprising of 5 short stories by 5 directors. Each story is about a women.</p>
+</div><br><br>
+<button><h4>Watch Now</h4></button>
+
+    </div>
+
+    <div class="col" id="nine">
+        <img id="mov" src="https://m.media-amazon.com/images/M/MV5BNzMxOWE2YTktZWE5MC00OTcyLWE3NWUtMDFlMjg3N2ZhMTRmXkEyXkFqcGdeQXVyODE0NjUxNzY@._V1_.jpg" alt="">
+<h3>1983</h3>
+<h5>2014 ‧ Sport/Family ‧ 2h 18m</h5>
+<div class="hov">
+    <p>Rameshan, who has great love for cricket, fails to become a cricketer in his life. However, he tries to fulfil his dreams through his son when he realises that the child too has a passion for it.</p>
+</div><br>
+<button><h4>Watch Now</h4></button>
+
+    </div>
+
+    <div class="col" id="ban">
+        <img id="mov" src="data:image/jpeg;base64,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" alt="">
+   <h3>Banglore Days</h3>
+   <h5>2014 ‧ Romance/Comedy ‧ 2h 52m</h5>
+   <div class="hov">
+    <p><br>A fun roller coaster ride about three young people, Aju, Divya and Kuttan who are cousins, reach Bangalore to dream, discover and explore.</p>
+   </div><br>
+   <button><h4>Watch Now</h4></button>
+
+    </div>
+
+    <div class="col" id="ohm">
+        <img id="mov" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSFy3pzhqAh_aWmYJRBpru-5stLDz4uWM2xQ&s" alt="">
+<h3>Ohm Shanthi Oh Shana</h3>
+<h5>2014 ‧ Romance/Comedy ‧ 2h 16m</h5>
+<div class="hov">
+    <p> <br>A spirited young girl would stop at nothing to get the first love of her life, even if it takes seven years and several heartbreaks.</p>
+</div><br>
+<button><h4>Watch Now</h4></button>
+
+    </div>
+
+   
+</div>
+
+<div class="row">
+    <div class="col" id="mil">
+        <img id="mov" src="https://play-lh.googleusercontent.com/0RKemx_E5s5FjibEp2AH0KjN0SZyC419C_T5xxh5xZ9g21Hd3-KAiVHWWggcoUThYvde" alt="">
+   <h3>Mili</h3>
+   <h5>
+     2015 ‧ Drama ‧ 1h 54m
+    </h5>
+    <div class="hov">
+        <p> <br>Mili, an introvert, rises against life's challenges in order to take charge of her own life with the help of a soft skills trainer, Naveen.</p>
+    </div><br>
+    <button><h4>Watch Now</h4></button>
+
+    </div>
+
+    <div class="col" id="vad">
+        <img id="mov" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDowymNwSWILsE-D0ClgaCjWY0K90xFjXqIw&s" alt="">
+<h3>Oru Vadakkan Selfie</h3>
+<h5>2015  Comedy/Thriller ‧ 2h 22m
+</h5>
+<div class="hov">
+    <p> <br>Umesh, a loafer, leaves his hometown and goes to Chennai to become a filmmaker when his father asks him to manage their grocery store. A selfie that he takes in Chennai changes his life forever.</p>
+</div>
+<button><h4>Watch Now</h4></button>
+
+    </div>
+
+    <div class="col" id="ivi">
+        <img id="mov" src="https://upload.wikimedia.org/wikipedia/en/d/d6/Ivide.jpg" alt="">
+  <h3>Ivide</h3>
+  <h5>2015 ‧ Crime/Thriller ‧ 2h 24m
+</h5>
+<div class="hov">
+    <p>A police officer (Prithviraj Sukumaran) investigates a series of killings involving IT professionals in Atlanta. He develops a rapport with the CEO (Nivin Pauly) of an IT company and the two join minds to stop the spree.</p>
+</div>
+<button><h4>Watch Now</h4></button>
+
+    </div>
+
+    <div class="col" id="prem">
+        <img id="mov" src="https://m.media-amazon.com/images/M/MV5BMzJhNjMyOGMtYjhiYy00ZTAwLThmZWUtZmE5NzI3OTk4Y2M4XkEyXkFqcGdeQXVyMzQ5Njc3NzU@._V1_.jpg" alt="">
+   <h3>Premam</h3>
+   <h5>2015 ‧ Romance/Comedy ‧ 2h 36m
+</h5>
+<div class="hov">
+    <p>The plot follows George (Nivin)’s romantic journey with his friends from their teens to adulthood. While George's first love turns out to be a disappointment, Malar (Pallavi), a college lecturer, rekindles his love interest.</p>
+</div>
+<button><h4>Watch Now</h4></button>
+
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col" id="act">
+        <img id="mov" src="https://tejalwritesat.wordpress.com/wp-content/uploads/2016/05/action-hero-biju-1.jpg" alt="">
+   <h3>Action Hero Biju</h3>
+   <h5>2016 ‧ Action/Comedy ‧ 2h 30m
+</h5>
+<div class="hov">
+    <p>
+       <br> The life of an honest and determined police officer Biju and the various criminals he puts behind bars.
+    </p>
+</div><br>
+<button><h4>Watch Now</h4></button>
+
+    </div>
+
+    <div class="col" id="jac">
+        <img id="mov" src="https://xstreamcp-assets-msp.streamready.in/assets/MANORAMAMAX/MOVIE/647eadce7ec03c02b0159d63/images/1000x1500_JacobinteSwargarajyam_125012_847bbe1f-02d8-4c72-bf54-692d23bbd2bb.jpg" alt="">
+    <h3>Jacobinde Swargarajyam</h3>
+    <h5>2016 ‧ Drama/Comedy ‧ 2h 25m</h5>
+    <div class="hov">
+        <p> <br>Jacob, a successful businessman, is settled in Dubai with his family. He is forced to flee to another country when he ends up with a huge debt as his friend betrays him.</p>
+    </div>
+    <button><h4>Watch Now</h4></button>
+
+    </div>
+
+    <div class="col" id="sak">
+        <img id="mov" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvp-o3cIb4KGwO08cmtJwbQEPlyKSgwV0aMSLpuxbqH5mfJQ5rHqBd82Vh-ZO8NqSwIp3X_g" alt="">
+<h3>Sakhavu</h3>
+<h5>2017 ‧ Drama/Comedy ‧ 2h 44m</h5>
+<div class="hov">
+    <p> <br>Kichu is a heartless student leader who can go to any extent for power. He is asked to donate his blood to save a man named Krishnan, whose story changes him for the better.</p>
+</div>
+<button><h4>Watch Now</h4></button>
+
+    </div>
+    <div class="col" id="nja">
+        <img id="mov" src="https://c.saavncdn.com/551/Njandukalude-Nattil-Oridavela-Malayalam-2017-20171214-500x500.jpg" alt="">
+<h3>Njandugalude Naattil Oridavela</h3>
+<h5> 2017 ‧ Comedy/Drama ‧ 2h 11m
+</h5>
+<div class="hov">
+    <p>Kurian returns home when his family summons him, believing it to have something to do with his marriage. However, he learns that his mother has breast cancer and supports her along with his family.</p>
+</div>
+<button><h4>Watch Now</h4></button>
+
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col" id="ric">
+        <img id="mov" src="https://img1.hotstarext.com/image/upload/f_auto,t_hcdl/sources/r1/cms/prod/5505/305505-h" alt="">
+  <h3>Richie</h3>
+  <h5>2017 ‧ Crime/Action ‧ 1h 51m
+</h5>
+<div class="hov">
+    <p> <br>A journalist sets out to uncover the truth behind an incident, through the perspectives of different people, unraveling how they and their lives are intertwined with it.</p>
+</div>
+<button><h4>Watch Now</h4></button>
+
+    </div>
+    <div class="col" id="jude">
+        <img id="mov" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTP_fdR1QOMpYcaoK8RqPC6jJ4mjTELyb5U7F1MSaXABn_Ra8krMp09rxauQydDqxlOZvMW6A" alt="">
+<h3>Hey Jude</h3>
+<h5> 2018 ‧ Romance/Comedy ‧ 2h 26m</h5>
+<div class="hov">
+    <p> <br>Jude, a mathematical genius with poor social skills, visits Goa with his parents after the demise of his aunt. There, his life changes completely after he meets Crystal, a moody musician.</p>
+</div>
+<button><h4>Watch Now</h4></button>
+
+    </div>
+
+    <div class="col" id="kay">
+        <img id="mov" src="https://images.indianexpress.com/2018/08/nivin-pauly-mohanlal-kayamkulam-kochunni-release-date-759.jpg" alt="">
+   <h3>Kayamkulam Kochunni</h3>
+   <h5>2018 ‧ Action/Drama ‧ 2h 31m
+</h5>
+<div class="hov">
+    <p>Ill-treated since childhood by the wealthy people, Kayamkulam Kochunni decides to steal from the rich and feeds the poor and the lower caste community, thus growing into a hero for the downtrodden.</p>
+</div>
+<button><h4>Watch Now</h4></button>
+
+    </div>
+    <div class="col">
+        <img id="mov" src="https://upload.wikimedia.org/wikipedia/en/9/9a/Mikhael_Film.jpg" alt="">
+   <h3>Mikhael</h3>
+   <h5>2019 ‧ Action/Thriller ‧ 2h 30m</h5>
+   <div class="hov">
+    <p> <br>When a vengeful man with criminal ties starts hunting down his family, Dr. Mikhael vows to protect them and annihilate his enemy.</p>
+   </div><br>
+   <button><h4>Watch Now</h4></button>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <img id="mov" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTIBE1l1i1El8EKVe7wLkK9s_zUcuW5W-R4M3Uk_ihWCoX-c_S9Y4nBR3WBtlMqLOYp3B5wFQ" alt="">
+   <h3>Love Action Drama</h3>
+   <h5> 2019 ‧ Comedy/Romance ‧ 2h 26m
+</h5>
+<div class="hov">
+    <p> <br>A man goes through all kinds of action to impress the girl he is in love with a hope to marry her.</p>
+</div><br><br>
+<button><h4>Watch Now</h4></button>
+
+    </div>
+
+    <div class="col">
+        <img id="mov" src="https://talesntunes.wordpress.com/wp-content/uploads/2019/11/moothon.jpg?w=660" alt="">
+   <h3>Moothon</h3>
+   <h5>2019 ‧ Thriller/Action ‧ 2h 5m
+</h5>
+<div class="hov">
+    <p>
+      <br>  A transgender child from Lakshadweep sets off to Mumbai in pursuit of Akbar, an elder brother who left the island due to his sexual orientation.
+    </p>
+</div><br>
+<button><h4>Watch Now</h4></button>
+
+    </div>
+
+    <div class="col" id="ka">
+        <img id="mov" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSAM35fqgUtWzN8zhJkjKffgZQuAGFlLVQB0FkzMEGX7xJ6h_p3rtBC5G58XIN5hWCPd3Fa" alt="">
+    <h3>Kanakam Kaamini Kalaham</h3>
+    <h5> 2021 ‧ Comedy ‧ 2h 1m
+    </h5>
+    <div class="hov">
+        <p>The film revolves around a single day in 'Hill Top' - the once-grand, now-drab hotel in downtown Ernakulam, where a constantly bickering married couple, Pavithran and Haripriya, checks-in for a jolly stay.</p>
+    </div>
+    <button><h4>Watch Now</h4></button>
+
+    </div>
+
+    <div class="col">
+        <img id="mov" src="https://m.media-amazon.com/images/M/MV5BNDA1Mjc1Y2ItODQ5Yi00MjA4LWE2ZmQtOTY2NDYzMGNjMDRhXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg" alt="">
+  <h3>Mahaveeryar</h3>
+  <h5>2022 ‧ Comedy/Action ‧ 2h 20m
+</h5>
+<div class="hov">
+    <p> The film focuses on justice for a woman by time-travel to a court in the 21st century through the 18th-century lens. The proceedings are snowballed by a time-traveling monk named Apoornnananda Swamikal.</p>
+</div>
+<button><h4>Watch Now</h4></button>
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col">
+        <img id="mov" src="https://assets-in.bmscdn.com/discovery-catalog/events/et00341828-lwuqkhuqsk-landscape.jpg" alt="">
+   <h3>Padavettu</h3>
+   <h5>2022 ‧ Action/Thriller ‧ 2h 25m
+</h5>
+   <div class="hov">
+    <p>In North Kerala, India, the people of a small village are torn between oppression and their aspirations until a young man sets out to fight for their freedom.</p>
+   </div>
+   <button><h4>Watch Now</h4></button>
+
+    </div>
+    <div class="col">
+        <img id="mov" src="https://c.saavncdn.com/929/Thuramukham-Malayalam-2023-20231130070929-500x500.jpg" alt="">
+  <h3>Thuramukham</h3>
+  <h5>
+    2023 ‧ Action/Thriller ‧ 2h 54m
+  </h5>
+  <div class="hov">
+    <p>' struggles and protests against the infamous 'Chappa' system of casual labour allocation and the primitive "work guarantee" scheme that was practiced at the Mattancherry harbor.</p>
+  </div>
+     <button><h4>Watch Now</h4></button>
+
+    </div>
+    <div class="col">
+        <img id="mov" src="https://i0.wp.com/boxofficebudget.com/wp-content/uploads/Varshangalkku-Shesham-Box-Office-Collection-Day-3.jpg" alt="">
+    <h3>Varshangalk Shesham</h3>
+    <h5>2024 ‧ Drama ‧ 2h 47m</h5>
+    <div class="hov">
+        <p> <br>Two young men leave their hometown to chase their dream of becoming big in the world of 1970s and '80s South Indian cinema.
+        </p>
+    </div>
+    <button><h4>Watch Now</h4></button>
+
+    </div>
+    <div class="col">
+        <img id="mov" src="https://m.media-amazon.com/images/M/MV5BNmE5ZGFmM2YtNDdkOC00Yzk3LWEyOWQtN2U5ZGE0ZjZhOTk2XkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_.jpg" alt="">
+    <h3>Malayali From India</h3>
+    <h5>2024 ‧ Drama/Comedy ‧ 2h 38m
+    </h5>
+    <div class="hov">
+        <p> <br>An unemployed young man is compelled to embark on a journey away from his home, which changes the course of his life.</p>
+    </div>
+    <button><h4>Watch Now</h4></button>
+
+    </div>
+</div>
+</section>
+
+<br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+</body>
+</html>
